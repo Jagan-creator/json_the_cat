@@ -9,7 +9,7 @@ const fetchBreed = ((breedName, callback) => {
     const data = JSON.parse(body);
 
     if (error) {
-      callback(error);
+      callback(error, null);
     } if (data[0]) {
       callback(null, data[0].description);
     } else {
@@ -18,3 +18,5 @@ const fetchBreed = ((breedName, callback) => {
 
   });
 });
+
+module.exports = { fetchBreed };
